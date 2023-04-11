@@ -9,11 +9,21 @@ project "Acoupst"
 
    includedirs
    {
+      "src",
+
       "../vendor/imgui",
       "../vendor/glfw/include",
 
       "%{IncludeDir.VulkanSDK}",
       "%{IncludeDir.glm}",
+   }
+
+   links
+   {
+       "ImGui",
+       "GLFW",
+
+       "%{Library.Vulkan}",
    }
 
    targetdir ("../bin/" .. outputdir .. "/%{prj.name}")
